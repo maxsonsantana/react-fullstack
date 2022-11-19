@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 
 //Import routes
 const authRoute = require("./routes/auth");
+const toDosRoute = require('./routes/todo');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.post("/name", (req, res)=>{
 });
 
 app.use("/api/auth", authRoute);
+app.use('/api/todos', toDosRoute);
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log("Conexão realizada com Sucesso");

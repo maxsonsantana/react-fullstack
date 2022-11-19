@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const router = require('../routes/auth');
 
 const requiresAuth = async(req, res, next)=>{
-    const token = req.cookies["acces-token"];
+    const token = req.cookies["access-token"];
     let isAuthed = false;
 
     if(token){
